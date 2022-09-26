@@ -141,13 +141,13 @@ NfcTag NfcAdapter::read()
 #ifdef NDEF_USE_SERIAL
         Serial.print(F("Can not determine tag type"));
 #endif
-        return NfcTag(uid, uidLength);
+        return NfcTag(uid, uidLength, "ERROR");
     }
     else
     {
         // Serial.print(F("No driver for card type "));Serial.println(type);
         // TODO should set type here
-        return NfcTag(uid, uidLength);
+        return NfcTag(uid, uidLength, "ERROR");
     }
 
 }
